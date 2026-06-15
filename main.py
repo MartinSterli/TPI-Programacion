@@ -186,7 +186,10 @@ def ordenar_paises():  # Submenu de ordenamiento
                     print(f"Nombre: {pais['nombre']} | Poblacion: {pais['poblacion']} | Superficie: {pais['superficie']} km2 | Continente: {pais['continente']}")
                 input("\nPresiona Enter para volver al menu.. ")
             elif opcion == 2 or opcion == 3:
-                campo = "poblacion" if opcion == 2 else "superficie"
+                if opcion == 2:
+                    campo = "poblacion"
+                else:
+                    campo = "superficie"
                 while True:
                     try:
                         orden = int(input("\n1. Ascendente\n2. Descendente\n\nElige una opcion: "))
@@ -194,9 +197,15 @@ def ordenar_paises():  # Submenu de ordenamiento
                         input("\nError, asegurate de ingresar un valor numerico, presiona Enter para volver a intentarlo.. ")
                     else:
                         if orden == 1 or orden == 2:
-                            descendente = orden == 2
+                            if orden == 2:
+                                descendente = True
+                            else:
+                                descendente = False
                             ordenados = sorted(paises, key=lambda p: p[campo], reverse=descendente)
-                            print(f"\n/////// Paises ordenados por {campo} ({'descendente' if descendente else 'ascendente'}) ///////\n")
+                            if descendente == True:
+                                print(f"\n/////// Paises ordenados por {campo} (descendente) ///////\n")
+                            else:
+                                print(f"\n/////// Paises ordenados por {campo} (ascendente) ///////\n")
                             for pais in ordenados:
                                 print(f"Nombre: {pais['nombre']} | Poblacion: {pais['poblacion']} | Superficie: {pais['superficie']} km2 | Continente: {pais['continente']}")
                             input("\nPresiona Enter para volver al menu.. ")

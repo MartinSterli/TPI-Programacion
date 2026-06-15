@@ -42,7 +42,9 @@ El archivo paises.csv debe estar en la misma carpeta que main.py.
 
 ## Video demostrativo
 
-
+https://www.youtube.com/watch?v=rkbbkRW2rQs
 
 ## Documentacion PDF
+
+[TPI-Programacion.pdf](TPI-Programacion.pdf)
 
